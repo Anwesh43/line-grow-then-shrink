@@ -47,7 +47,7 @@ export const useStyle = (w, h, scale) => {
     const sf = sinify(scale)
     const size = w / 8 
     const finalSize = w / 2
-    const hSize = Math.min(w, h) / 60
+    const hSize = Math.min(w, h) / 20
     const fixedX = w / 2 - size
     const fixedY = h - hSize
     const position = 'absolute'
@@ -56,11 +56,11 @@ export const useStyle = (w, h, scale) => {
     const sf2 = divideScale(sf, 1, 2)
     return {
         getLineStyle() {
-            const wFinal = (finalSize - size) * sf1 + (finalSize - size) * sf2
+            const wFinal = (finalSize - size) * sf1 - (finalSize - size) * sf2
             const left = `${fixedX - wFinal}px`
-            const top = `${fixedY + (h - fixedY) * sf}px`
-            const heigth = `${hSize}px`
-            const width = `${wFinal * 2}px`
+            const top = `${fixedY - (fixedY) * sf}px`
+            const height = `${hSize}px`
+            const width = `${(size + wFinal) * 2}px`
             return {position, left, top, width, height, background}
         }
     }

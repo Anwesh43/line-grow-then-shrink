@@ -1,8 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import LineGrowAndShrinkContainer from './LineGrowAndShrinkContainer'
-import LineAndGrowShrinkContainer from './LineGrowAndShrinkContainer';
+import LineAndGrowShrinkContainer from './LineAndGrowShrinkContainer'
 
 function App() {
   return (
